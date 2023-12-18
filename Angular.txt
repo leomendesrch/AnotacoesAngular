@@ -1,0 +1,56 @@
+Programação Orientada a Componentes;
+
+9 Blocos principais:
+1. Componentes
+Seriam a "View", oque o usuario vai ver, então ele encapsula:
+- template ( código HTML );
+- MetaData ( MetaDados, permitem Angular ler e processar classes );
+- Data Binding ( associação dos dados que nos temos no componente com os componentes html do template );
+- Comportamento da View;
+
+2. Diretivas
+- Responsável por modificar elementos DOM e/ou seu comportamento,
+Componentes podem ser considerados diretivas pois tambem manipulam o DOM;
+ex: NgFor;
+
+3. Roteamento
+- Responsavel pela navegação entre telas no Angular,
+que é um framework de SPA.
+
+4. Serviços
+- Não é uma boa prática escrever codigo de logica de negocio dentro do componente,
+pra isso usamos Serviços, responsavel por conter toda logica de negocio e se comunicar com o backend;
+O serviço pode ser injetado em outras classes, para isso usamos Injeção de dependencias do angular
+
+5. Template
+- Arquivos que lidam diretamente com a VIEW do componente,
+são os arquivos HTML e CSS.
+
+6. Metadata
+- Os metadados informam ao angular onde obter os maiores blocos de contrução necessarios
+para criar e apresentar o componente e sua vizualização.
+Em particular, ele associa um modelo ao componente, diretamente com código embutido ou por referência.
+Juntos, o componente e seu modelo descrevem uma visualização.
+
+7. Data Binding
+- É uma forma de associar informações de um componente para um template, ou vice-versa.
+Ou seja, uma comunicação entre a view e a logica, quando atualizamos a logica reflete na view.
+Tipos de Data Binding:
+- Property Binding =>
+  1. Valor do componente para template
+  2. Usa-se Colchetes <img [src]="urlImage" />
+- Interpolação =>
+  1. Valor do componente para template
+  2. Usa-se Chaves {{ title }}
+
+8. Injeção de Dependencia
+- É um padrão de projeto no qual uma classe solicita dependências de fontes externas ao invés de criá-las.
+Podemos instaciar um serviço que dependemos manualmente no componente,
+mas isso não é uma boa pratica. Por isso injetamos as dependecias nas nossas classes.
+
+9. Modulos
+- Modulo é um arquivo que ajuda a organizar e modularizar a aplicação. 
+Podemos desenvolver diretorios para organizar o codigo,
+por exemplo pasta de admin, que vai gerenciar permissoes
+diretorio de produtos que vai gerenciar, o modulo de produtos e seus componentes,
+com modulos podemos escolher oque vamos expor para outros modulos da aplicação
