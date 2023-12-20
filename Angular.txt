@@ -39,9 +39,36 @@ Tipos de Data Binding:
 - Property Binding =>
   1. Valor do componente para template
   2. Usa-se Colchetes <img [src]="urlImage" />
+  3. Style binding é aplicado dessa forma:
+  <div [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+    Esse texto é gay
+  </div>
+  4. class binding é aplicado dessa forma:
+  <div [class.alert-warning]="classe.value == 'alert-warning'">
+    Alerta
+  </div>
+
 - Interpolação =>
   1. Valor do componente para template
   2. Usa-se Chaves {{ title }}
+
+- Event Binding =>
+  1. Escuta Eventos no HTML do template e executa logica no componente.
+  2. Usa-se dessa forma:
+    <input 
+    type="text" 
+    (keyup)="onKeyUp($event)" // adiciona o evento keyup ao input e passa o evento(precisa do "$evento") como parametro do metodo
+    (keyup.enter)="SalvarValor(campoInput)" // adiciona o evento keyup da tecla enter executa o metodo, passa o elemento como parametro
+    (blur)="SalvarValor(campoInput)" // adiciona o evento blur ao input e executa um metodo do componente
+    #campoInput // declara uma variavel local que faz referencia ao elemento HTML
+    >
+
+- Two-Way Data Binding =>
+  1. Valor do template para componente e vice versa, ou seja, binding bi-direcional.
+  2. Como queremos atualizar Componente e Template ao mesmo tempo, temos que utilizar property e event binding.
+  3. Usa-se Dessa forma:
+  
+
 
 8. Injeção de Dependencia
 - É um padrão de projeto no qual uma classe solicita dependências de fontes externas ao invés de criá-las.
